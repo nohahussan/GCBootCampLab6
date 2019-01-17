@@ -15,16 +15,15 @@ namespace Lab6
                 Boolean repeat = true;
                 int counter = 0; //count how many times the user will play the game
 
-            do
-            {
-                counter++;// The user started playing
-                Console.WriteLine("How many sides should each die have?");
-                int numSides = int.Parse(Console.ReadLine());
-                Console.WriteLine("Roll {0}: ", counter);
-                RandomNumberGenerator(numSides);
-                Continue(repeat);
-
-            } while (repeat);
+                do
+                {
+                    counter++;// The user started playing
+                    Console.WriteLine("How many sides should each die have?");
+                    int numSides = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Roll {0}: ", counter);
+                    RandomNumberGenerator(numSides);
+                    repeat = Continue(repeat);//cheek if the user would like to continue
+                } while (repeat);
         }
 
         public static Boolean Continue(Boolean repeat) 
@@ -43,6 +42,5 @@ namespace Lab6
             Console.WriteLine(numGen1 + "\n" + numGen2);
 
         }
-
     }
 }
